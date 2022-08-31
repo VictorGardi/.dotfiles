@@ -22,4 +22,5 @@ https://github.com/sharkdp/fd#installation
 
 ## Steps to get up and running with minimal vim
 1. Link .dotfiles/minimal_vim/.vimrc to ~/.vimrc
+
 ln ~/.dotfiles/minimal_vim/.vimrc ~/.vimrc
