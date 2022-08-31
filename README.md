@@ -1,5 +1,5 @@
 # .dotfiles
-Steps to get up and running with neovim 
+## Steps to get up and running with neovim 
 https://github.com/hampusek/ansible
 https://github.com/hampusek/.dotfiles
 
@@ -19,3 +19,7 @@ PlugInstaller
 7. Install ripgrep and sharkdp on your system
 https://github.com/BurntSushi/ripgrep
 https://github.com/sharkdp/fd#installation
+
+## Steps to get up and running with minimal vim
+1. Link .dotfiles/minimal_vim/.vimrc to ~/.vimrc
+ln ~/.dotfiles/minimal_vim/.vimrc ~/.vimrc
