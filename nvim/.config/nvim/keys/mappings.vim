@@ -9,7 +9,16 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
+nnoremap <C-t> :tab split<CR>
+nnoremap <A-s> <C-PageDown>
+nnoremap <A-w> <C-PageUp>
+nnoremap <C-x> :tabclose<CR> 
+" remap terminal 
+tnoremap <Esc> <C-\><C-n>
+tnoremap <M-[> <Esc>
+tnoremap <C-v><Esc> <Esc>
 
+autocmd TermOpen * startinsert
 
 " yank from cursor to end of line
 nnoremap Y y$
