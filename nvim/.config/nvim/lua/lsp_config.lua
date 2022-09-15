@@ -90,28 +90,29 @@ cmp.setup({
 
 -- setup lspconfig
 require('lspconfig')['pyright'].setup {
-    on_atttach = function()
+    on_attach = function()
     -- vim.keymap.set() only works for nvim 0.7 or later
     --  map in normal mode K to buf hover
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definiition, {buffer=0})
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {buffer=0})
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {buffer=0})
-    vim.keymap.set("n", "<leader>dj", vim.disgnostic.goto_next, {buffer=0})
-    vim.keymap.set("n", "<leader>dk", vim.disgnostic.goto_prev, {buffer=0})
+    vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
+    vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
     vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
-    capabilities = require('cmp_nvim_lsp').update_cappabilities(vim.lsp.protocol.make_client_capabilities())
+    vim.keymap.set("n", "<leader>hm", vim.lsp.buf.signature_help, {buffer=0})
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     end,
 }
 -- clangd
 require('lspconfig')['clangd'].setup {
-    on_atttach = function()
+    on_attach = function()
     -- vim.keymap.set() only works for nvim 0.7 or later
     --  map in normal mode K to buf hover
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definiition, {buffer=0})
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {buffer=0})
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {buffer=0})
-    vim.keymap.set("n", "<leader>dj", vim.disgnostic.goto_next, {buffer=0})
-    vim.keymap.set("n", "<leader>dk", vim.disgnostic.goto_prev, {buffer=0})
+    vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
+    vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
     vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
     capabilities = require('cmp_nvim_lsp').update_cappabilities(vim.lsp.protocol.make_client_capabilities())
     end,
