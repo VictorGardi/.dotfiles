@@ -14,8 +14,9 @@ python3 -m venv ~/.local/nvim
 ~/.local/venv/nvim/bin/python3 -m pip install pynvim
 ~/.local/venv/nvim/bin/python3 -m pip install pyright
 5. alias vim= which nvim
+5b. ln -s ~/.dotfiles/nvim/.config/nvim ~/.config/nvim
 6. Open vim and run 
-PlugInstaller
+:PlugInstall
 7. Install ripgrep and sharkdp on your system
 https://github.com/BurntSushi/ripgrep
 https://github.com/sharkdp/fd#installation
