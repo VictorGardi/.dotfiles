@@ -7,6 +7,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/harpoon.vim
 lua require'treesitter'
 lua require'lsp_config'
+lua require('gitsigns').setup()
 "lua require'luasnip'
 
 "highlight Normal guibg=non"

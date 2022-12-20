@@ -39,6 +39,8 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+" gitsigns
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 
