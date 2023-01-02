@@ -25,3 +25,8 @@ https://github.com/sharkdp/fd#installation
 1. Link .dotfiles/minimal_vim/.vimrc to ~/.vimrc
 
 ln ~/.dotfiles/minimal_vim/.vimrc ~/.vimrc
+
+## How to configure ipython
+- Install by pip install ipython
+- cp ipython/ipython_config.py into ~/.ipython/profile_default/ 
+
