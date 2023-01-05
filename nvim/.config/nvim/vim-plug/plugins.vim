@@ -41,8 +41,8 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 
-colorscheme tokyonight-night "gruvbox
-set background=dark
+colorscheme tokyonight-moon "gruvbox
+" set background=dark
 
 
 set completeopt=menuone,noinsert,noselect
