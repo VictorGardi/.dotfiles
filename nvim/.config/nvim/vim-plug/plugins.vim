@@ -13,6 +13,11 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 
+" markdown plugins
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Plug 'plasticboy/vim-markdown'
+
 " Telescope requirements"
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/popup.nvim'
@@ -28,23 +33,15 @@ Plug 'ThePrimeagen/harpoon'
 " Vim-be-good game
 Plug 'ThePrimeagen/vim-be-good'
 
-" git worktrees
-Plug 'ThePrimeagen/git-worktree.nvim'
-
-" python formatting
-"Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
-"Plug 'sbdchd/neoformat'
-
-" Pandoc
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-
 " gitsigns
 Plug 'lewis6991/gitsigns.nvim'
+
+" tokyonight theme
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 
-colorscheme gruvbox
+colorscheme tokyonight-night "gruvbox
 set background=dark
 
 

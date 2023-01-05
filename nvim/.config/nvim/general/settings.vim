@@ -2,6 +2,7 @@
 "Set tab to 4 spaces
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set textwidth=80
 set expandtab
 set smartindent
 set backspace=indent,eol,start "fixed some problems with delete
