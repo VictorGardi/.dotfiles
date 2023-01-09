@@ -16,7 +16,7 @@ Plug 'rafamadriz/friendly-snippets'
 " markdown plugins
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-" Plug 'plasticboy/vim-markdown'
+Plug 'pwntester/octo.nvim'
 
 " Telescope requirements"
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -39,12 +39,33 @@ Plug 'nvim-tree/nvim-web-devicons'
 " gitsigns
 Plug 'lewis6991/gitsigns.nvim'
 
+" Plug 'sainnhe/everforest'
+" Plug 'rose-pine/neovim'
+
+Plug 'sainnhe/everforest'
+
 " tokyonight theme
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
+" see :help evernote.txt for this section
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
 
+" For dark version.
+set background=dark
 
-colorscheme tokyonight-moon "gruvbox
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'soft'
+
+" For better performance
+let g:everforest_better_performance = 1
+
+colorscheme everforest
+" colorscheme tokyonight-moon
 " set background=dark
 
 
