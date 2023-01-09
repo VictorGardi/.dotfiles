@@ -95,6 +95,7 @@ require('lspconfig')['pyright'].setup {
     --  map in normal mode K to buf hover
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
     vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {buffer=0})
+    vim.keymap.set("n", "<leader>fu", vim.lsp.buf.references, {buffer=0})
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {buffer=0})
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})

@@ -33,6 +33,9 @@ Plug 'ThePrimeagen/harpoon'
 " Vim-be-good game
 Plug 'ThePrimeagen/vim-be-good'
 
+" tab icons
+Plug 'nvim-tree/nvim-web-devicons'
+
 " gitsigns
 Plug 'lewis6991/gitsigns.nvim'
 
