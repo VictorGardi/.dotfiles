@@ -64,10 +64,13 @@ let g:everforest_background = 'soft'
 " For better performance
 let g:everforest_better_performance = 1
 
+let g:everforest_transparent_background = 1
 colorscheme everforest
 " colorscheme tokyonight-moon
 " set background=dark
 
+" config octo
+lua require("octo").setup()
 
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
