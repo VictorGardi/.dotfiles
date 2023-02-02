@@ -7,4 +7,5 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
+nm-applet &
 polybar example 2>&1 | tee -a /tmp/polybar1.log & disown
