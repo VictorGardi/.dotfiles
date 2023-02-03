@@ -1,0 +1,9 @@
+[
+  {
+    "command": [
+      "/usr/lib/mongodb-compass/MongoDB Compass",
+      "Compass"
+    ],
+    "working_directory": "/mnt/home/a403929"
+  }
+]

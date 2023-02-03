@@ -1,0 +1,8 @@
+[
+  {
+    "command": [
+      "/opt/microsoft/msedge-dev/msedge"
+    ],
+    "working_directory": "/mnt/home/a403929"
+  }
+]

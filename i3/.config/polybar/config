@@ -31,7 +31,6 @@ height = 20pt
 radius = 6
 
 ; dpi = 96
-
 background = ${colors.background}
 foreground = ${colors.foreground}
 

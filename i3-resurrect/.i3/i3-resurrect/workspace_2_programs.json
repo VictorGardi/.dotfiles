@@ -1,0 +1,8 @@
+[
+  {
+    "command": [
+      "gnome-terminal"
+    ],
+    "working_directory": "/mnt/home/a403929"
+  }
+]

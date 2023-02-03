@@ -1,0 +1,10 @@
+[
+  {
+    "command": [
+      "/opt/Prospect Mail/prospect-mail",
+      "Mail/prospect-mail",
+      "--enable-crashpad"
+    ],
+    "working_directory": "/mnt/home/a403929"
+  }
+]

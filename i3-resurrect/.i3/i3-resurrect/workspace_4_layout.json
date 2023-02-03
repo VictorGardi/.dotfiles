@@ -1,0 +1,50 @@
+{
+  "border": "normal",
+  "current_border_width": -1,
+  "floating": "auto_off",
+  "fullscreen_mode": 0,
+  "geometry": {
+    "x": 0,
+    "y": 0,
+    "width": 0,
+    "height": 0
+  },
+  "layout": "splith",
+  "marks": [],
+  "name": "4",
+  "orientation": "horizontal",
+  "percent": 0.15131756210594383,
+  "scratchpad_state": "none",
+  "sticky": false,
+  "type": "workspace",
+  "workspace_layout": "default",
+  "nodes": [
+    {
+      "border": "pixel",
+      "current_border_width": 0,
+      "floating": "auto_off",
+      "fullscreen_mode": 0,
+      "geometry": {
+        "x": 100,
+        "y": 100,
+        "width": 1400,
+        "height": 900
+      },
+      "layout": "splith",
+      "marks": [],
+      "name": "Kalender - Olsson Victor (Consultant) - Outlook",
+      "orientation": "none",
+      "percent": 1.0,
+      "scratchpad_state": "none",
+      "sticky": false,
+      "type": "con",
+      "workspace_layout": "default",
+      "swallows": [
+        {
+          "class": "^Prospect\\ Mail$",
+          "instance": "^prospect\\ mail$"
+        }
+      ]
+    }
+  ]
+}
