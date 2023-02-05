@@ -4,5 +4,12 @@
       "/usr/bin/gnome-control-center"
     ],
     "working_directory": "/mnt/home/a403929"
+  },
+  {
+    "command": [
+      "/usr/bin/python3.10",
+      "/usr/bin/blueman-manager"
+    ],
+    "working_directory": "/mnt/home/a403929"
   }
 ]

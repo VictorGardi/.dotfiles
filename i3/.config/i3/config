@@ -188,10 +188,11 @@ bindsym $mod+r mode "resize"
 #}
 exec_always --no-startup-id "killall -q picom; picom --config ~/.config/picom/config"
 
-exec_always --no-startup-id "feh --no-fehbg --bg-scale /usr/share/backgrounds/pexels-pixabay-147411.jpg"
-# retro_wallpaper.png"
+exec_always --no-startup-id "feh --no-fehbg --bg-scale ~/.config/wallpapers/banff.jpg"
+# /usr/share/backgrounds/pexels-pixabay-147411.jpg"
+
 # keybinding to lock screen
-bindsym Control+Mod4+l exec "i3lock -i /usr/share/backgrounds/retro_wallpaper.png -t"
+bindsym Control+Mod4+l exec "i3lock -i ~/.config/wallpapers/retro_wallpaper.png -t"
 bindsym $mod+Tab workspace back_and_forth
 # remove border
 for_window [class="^.*"] border pixel 0
