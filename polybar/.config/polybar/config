@@ -85,6 +85,7 @@ interval = 1
 # format-prefix = "<prefix-symbol>"
 # format = <label>
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+click-left = i3 workspace number 6
 
 [module/spotify-prev]
 type = custom/script
@@ -143,7 +144,8 @@ exec = ~/.config/polybar/scripts/system-bluetoothctl.sh
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
 tail = true
-click-left = ~/.config/polybar/scripts/system-bluetoothctl.sh --toggle
+click-left = i3 workspace number 9 
+# click-left = ~/.config/polybar/scripts/system-bluetoothctl.sh --toggle
 
 [module/backlight]
 type = internal/backlight
@@ -256,7 +258,8 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 inherit = network-base
 interface = wlp0s20f3
 interface-type =  wireless
-label-connected = %{F#F0C674}%{F-} %essid% %local_ip%
+label-connected = %{F#F0C674}%{F-} %{A1:i3 workspace number 9:}%essid% %local_ip% %{A}
+click-left = i3 workspace number 9 
 
 [module/eth]
 inherit = network-base
