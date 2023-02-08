@@ -201,6 +201,7 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #fffff
 
 exec_always --no-startup-id ~/.config/polybar/polybar.sh &
 
+# -------------------------i3 resurrect -------------------------------
 set $i3_resurrect i3-resurrect
 
 # Save workspace mode.
@@ -246,3 +247,7 @@ mode "restore" {
 }
 
 bindsym $mod+Shift+n mode "restore"
+
+# --------------------------------------------------------------------
+
+
