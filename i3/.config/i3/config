@@ -249,5 +249,5 @@ mode "restore" {
 bindsym $mod+Shift+n mode "restore"
 
 # --------------------------------------------------------------------
-
-
+# add keybinding for moving workspace to different display
+bindsym $mod+m move workspace to output left
