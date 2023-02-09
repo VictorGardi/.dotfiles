@@ -20,10 +20,44 @@
 background = #282A2E
 background-alt = #373B41
 foreground = #C5C8C6
-primary = #F0C674
+; primary = #F0C674
 secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
+sep = #3F5360
+
+white = #FFFFFF
+black = #1E2128
+red = #EC7875
+pink = #EC407A
+purple = #BA68C8
+blue = #42A5F5
+cyan = #4DD0E1
+teal = #00B19F
+green = #61C766
+lime = #B9C244
+yellow = #FDD835
+amber = #FBC02D
+;;orange = #D55D0E
+orange = #F1772E
+brown = #3C3836
+light-brown = #504945
+creme = #D5C4A1
+indigo = #6C77BB
+gray = #9E9E9E
+blue-gray = #6D8895
+celadon = #a7e8bd
+light-cyan = #c7eae4
+green-yellow-crayola = #d9dd92
+lemon-meringue = #ece4b7
+bistre = #311e10
+flame = #dd6031
+mustard = #f3ca20
+
+[bar]
+fill = 
+empty =  
+indicator =
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -54,36 +88,25 @@ separator-foreground = ${colors.disabled}
 font-0 = DejavuSansMono:size=10;3
 font-1 = FontAwesome:size=10;3
 
-modules-left = xworkspaces 
-; xwindow
-modules-right = spotify spotify-prev spotify-play-pause spotify-next custom-bluetooth backlight pulseaudio memory cpu wlan battery date
+; workspaces xwindow
+modules-left = spotify spotify-prev spotify-play-pause spotify-next custom-bluetooth
+modules-center = date
+modules-right = backlight pulseaudio memory cpu wlan battery
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
 
-
-; wm-restack = generic
-; wm-restack = bspwm
-; wm-restack = i3
-
-; override-redirect = true
-; tray-offset-x = 0
-; tray-offset-y = 0
 tray-detached = true  
-
-; other tray settings
-
-# tray-position = center 
-# wm-restack = i3
 
 [module/spotify]
 type = custom/script
 tail = true
 interval = 1
 ; prefix symbol is shown before the text
-# format-prefix = "<prefix-symbol>"
+format-prefix = " " 
+format-prefix-foreground = ${colors.green}
 # format = <label>
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 click-left = i3 workspace number 6
@@ -91,7 +114,7 @@ click-left = i3 workspace number 6
 [module/spotify-prev]
 type = custom/script
 exec = echo  
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.orange}
 format = <label>
 click-left = playerctl previous -p spotify
 
@@ -133,17 +156,85 @@ adapter = AC
 ;
 ; Default: 5
 poll-interval = 5
-label-charging =  %percentage%%
+
+#label-charging =  %percentage%%
+#label-discharging = %percentage%%
+#label-full =  %percentage%%
+#label-low =  %percentage%%
+#format-prefix = " "
+
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging>
+; <bar-capacity>
+format-charging-prefix = " " 
+format-charging-prefix-foreground = ${colors.green}
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <label-discharging> 
+; <bar-capacity>
+format-discharging-prefix = " " 
+format-discharging-prefix-foreground = ${colors.pink}
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+format-full-prefix =  
+format-full-prefix-foreground = ${colors.red}
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+
+label-charging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
 label-discharging = %percentage%%
-label-full =  %percentage%%
-label-low =  %percentage%%
-# label = 
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Full
+
+; Only applies if <bar-capacity> is used
+bar-capacity-format = " %fill%%indicator%%empty%"
+bar-capacity-width = 11
+bar-capacity-gradient = false
+
+bar-capacity-indicator = ${bar.indicator}
+bar-capacity-indicator-font = 2
+bar-capacity-indicator-foreground = ${color.foreground}
+
+bar-capacity-fill = ${bar.fill}
+bar-capacity-fill-font = 2
+bar-capacity-foreground-0 = ${colors.red}
+bar-capacity-foreground-1 = ${colors.orange}
+bar-capacity-foreground-2 = ${colors.yellow}
+bar-capacity-foreground-3 = ${colors.green}
+
+bar-capacity-empty = ${bar.empty}
+bar-capacity-empty-font = 2
+bar-capacity-empty-foreground = ${color.sep}
 
 [module/custom-bluetooth]
 type = custom/script
 exec = ~/.config/polybar/scripts/system-bluetoothctl.sh
-format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix = 
+format-prefix-foreground = ${colors.blue}
 tail = true
 click-left = i3 workspace number 9 
 # click-left = ~/.config/polybar/scripts/system-bluetoothctl.sh --toggle
@@ -151,11 +242,12 @@ click-left = i3 workspace number 9
 [module/backlight]
 type = internal/backlight
 
+format = <label> <bar>
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
 card = intel_backlight
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.yellow}
 label = %percentage%%
 
 ; Use the `/sys/class/backlight/.../actual-brightness` file
@@ -175,6 +267,19 @@ use-actual-brightness = true
 ; https://wiki.archlinux.org/index.php/Backlight#ACPI
 ; Default: false
 enable-scroll = true
+bar-width = 10
+bar-indicator = ${bar.indicator}
+bar-fill = ${bar.fill}
+bar-empty = ${bar.empty}
+
+bar-foreground-0 = ${colors.yellow}
+bar-foreground-1 = ${colors.yellow}
+; bar-foreground-2 = ${colors.yellow}
+; bar-foreground-3 = ${colors.yellow}
+; bar-foreground-2 = ${colors.red}
+
+bar-empty-font = 2
+bar-empty-foreground = ${colors.sep}
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -214,13 +319,34 @@ label-unmounted-foreground = ${colors.disabled}
 type = internal/pulseaudio
 
 format-volume-prefix = " "
-format-volume-prefix-foreground = ${colors.primary}
-format-volume = <label-volume>
+format-volume-prefix-foreground = ${colors.blue}
+format-volume = <label-volume> <bar-volume> 
 
 label-volume = %percentage%%
 
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
+
+; Only applies if <bar-volume> is used
+; bar-volume-format = "%fill%%indicator%%empty%"
+bar-volume-width = 11
+bar-volume-gradient = false
+
+bar-volume-indicator = ${bar.indicator}
+bar-volume-indicator-foreground = ${color.foreground}
+bar-volume-indicator-font = 2
+
+bar-volume-fill = ${bar.fill}
+bar-volume-fill-font = 2
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.yellow}
+bar-volume-foreground-3 = ${colors.yellow}
+bar-volume-foreground-4 = ${colors.red}
+
+bar-volume-empty = ${bar.empty}
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.sep}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -237,15 +363,15 @@ label-indicator-background = ${colors.secondary}
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
+format-prefix = " "
+format-prefix-foreground = ${colors.red}
 label = %percentage_used:2%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
+format-prefix = " "
+format-prefix-foreground = ${colors.green}
 label = %percentage:2%%
 
 [network-base]
@@ -259,7 +385,8 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 inherit = network-base
 interface = wlp0s20f3
 interface-type =  wireless
-label-connected = %{F#F0C674}%{F-} %{A1:i3 workspace number 9:}%essid% %local_ip% %{A}
+label-connected = %{F#F1772E} %{F-}%{A1:i3 workspace number 9:}%essid%%{A}
+; label-connected = %essid% 
 click-left = i3 workspace number 9 
 
 [module/eth]
@@ -271,6 +398,8 @@ label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
 type = internal/date
 interval = 1
 
+format-prefix = " "
+format-prefix-foreground = ${colors.purple}
 date = %H:%M
 date-alt = %Y-%m-%d %H:%M:%S
 
