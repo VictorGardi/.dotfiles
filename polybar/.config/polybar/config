@@ -88,8 +88,8 @@ separator-foreground = ${colors.disabled}
 font-0 = DejavuSansMono:size=10;3
 font-1 = FontAwesome:size=10;3
 
-; workspaces xwindow
-modules-left = spotify spotify-prev spotify-play-pause spotify-next custom-bluetooth
+; xworkspaces xwindow
+modules-left = xworkspaces spotify custom-bluetooth
 modules-center = date 
 modules-right = redshift backlight pulseaudio memory cpu wlan battery
 
@@ -113,13 +113,16 @@ interval=0.5
 [module/spotify]
 type = custom/script
 tail = true
-interval = 1
+interval = 3
 ; prefix symbol is shown before the text
-format-prefix = " " 
+format-prefix = %{A1:i3 workspace number 6:} %{A} 
 format-prefix-foreground = ${colors.green}
 # format = <label>
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
-click-left = i3 workspace number 6
+; click-left = i3 workspace number 6
+click-left = playerctl previous -p spotify
+click-right = playerctl next -p spotify
+click-middle = playerctl play-pause -p spotify
 
 [module/spotify-prev]
 type = custom/script
@@ -252,7 +255,8 @@ click-left = i3 workspace number 9
 [module/backlight]
 type = internal/backlight
 
-format = <label> <bar>
+format = <label> 
+; <bar>
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
 card = intel_backlight
