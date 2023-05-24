@@ -13,7 +13,7 @@
   "marks": [],
   "name": "1",
   "orientation": "horizontal",
-  "percent": 0.19999999999999998,
+  "percent": 0.10714285714285714,
   "scratchpad_state": "none",
   "sticky": false,
   "type": "workspace",
@@ -25,24 +25,51 @@
       "floating": "auto_off",
       "fullscreen_mode": 0,
       "geometry": {
-        "x": 828,
-        "y": 27,
-        "width": 1092,
-        "height": 877
+        "x": 0,
+        "y": 0,
+        "width": 1919,
+        "height": 1199
       },
       "layout": "splith",
       "marks": [],
-      "name": "(1) \u26a1 Power Prophets \u26a1 | Microsoft Teams - Profile 1 - Microsoft\u200b Edge",
+      "name": "Chat | Microsoft Teams - Brave",
       "orientation": "none",
-      "percent": 1.0,
+      "percent": 0.5,
       "scratchpad_state": "none",
       "sticky": false,
       "type": "con",
       "workspace_layout": "default",
       "swallows": [
         {
-          "class": "^Microsoft\\-edge$",
-          "instance": "^microsoft\\-edge$"
+          "class": "^Brave\\-browser$",
+          "instance": "^brave\\-browser$"
+        }
+      ]
+    },
+    {
+      "border": "pixel",
+      "current_border_width": 0,
+      "floating": "auto_off",
+      "fullscreen_mode": 0,
+      "geometry": {
+        "x": 448,
+        "y": 216,
+        "width": 1024,
+        "height": 768
+      },
+      "layout": "splith",
+      "marks": [],
+      "name": "general - AFRY X - Slack",
+      "orientation": "none",
+      "percent": 0.5,
+      "scratchpad_state": "none",
+      "sticky": false,
+      "type": "con",
+      "workspace_layout": "default",
+      "swallows": [
+        {
+          "class": "^Slack$",
+          "instance": "^slack$"
         }
       ]
     }

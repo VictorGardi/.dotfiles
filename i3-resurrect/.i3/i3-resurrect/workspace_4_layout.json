@@ -2,7 +2,7 @@
   "border": "normal",
   "current_border_width": -1,
   "floating": "auto_off",
-  "fullscreen_mode": 0,
+  "fullscreen_mode": 1,
   "geometry": {
     "x": 0,
     "y": 0,
@@ -13,7 +13,7 @@
   "marks": [],
   "name": "4",
   "orientation": "horizontal",
-  "percent": 0.15131756210594383,
+  "percent": 0.5,
   "scratchpad_state": "none",
   "sticky": false,
   "type": "workspace",
@@ -25,14 +25,14 @@
       "floating": "auto_off",
       "fullscreen_mode": 0,
       "geometry": {
-        "x": 100,
-        "y": 100,
-        "width": 1400,
-        "height": 900
+        "x": 960,
+        "y": 28,
+        "width": 960,
+        "height": 1172
       },
       "layout": "splith",
       "marks": [],
-      "name": "Kalender - Olsson Victor (Consultant) - Outlook",
+      "name": "Mail - Victor Olsson - Outlook - Brave",
       "orientation": "none",
       "percent": 1.0,
       "scratchpad_state": "none",
@@ -41,8 +41,8 @@
       "workspace_layout": "default",
       "swallows": [
         {
-          "class": "^Prospect\\ Mail$",
-          "instance": "^prospect\\ mail$"
+          "class": "^Brave\\-browser$",
+          "instance": "^brave\\-browser$"
         }
       ]
     }

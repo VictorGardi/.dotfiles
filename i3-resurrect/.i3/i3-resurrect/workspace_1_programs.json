@@ -1,8 +1,17 @@
 [
   {
     "command": [
-      "/opt/microsoft/msedge-dev/msedge"
+      "/opt/brave.com/brave/brave"
     ],
-    "working_directory": "/mnt/home/a403929"
+    "working_directory": "/home/victor"
+  },
+  {
+    "command": [
+      "/snap/slack/71/usr/lib/slack/slack",
+      "--no-sandbox",
+      "--executed-from=/home/victor",
+      "--pid=32961"
+    ],
+    "working_directory": "/home/victor"
   }
 ]
