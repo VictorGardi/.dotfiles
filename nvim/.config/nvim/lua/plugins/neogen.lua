@@ -15,5 +15,6 @@ return {
     local keymap = vim.keymap -- for conciseness
     local opts = { noremap = true, silent = true, desc = "Generate docstring for func" }
     keymap.set("n", "<Leader>nn", ":lua require('neogen').generate()<cr>", opts)
+    keymap.set("n", "<Leader>nc", ":lua require('neogen').generate( {type = 'class' })<cr>", opts)
   end,
 }

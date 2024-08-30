@@ -6,10 +6,10 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- Window navigation with leader + arrow keys
-keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+keymap.set("n", "<C-h>", "<C-w>l", { noremap = true, silent = true })
 keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
-keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+keymap.set("n", "<C-l>", "<C-w>h", { noremap = true, silent = true })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
