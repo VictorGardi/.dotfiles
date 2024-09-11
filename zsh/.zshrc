@@ -7,24 +7,13 @@ export ZSH="$HOME/.oh-my-zsh"
 alias python="python3"
 alias vim="nvim"
 
-export EPA_API_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwcm9kX3NlcnZpY2VzIiwiaGVyZV9hcGlfa2V5IjoiWFVyTTFxYWtaMnN2dTNJTE9IWjRJbDJTRk9uWHg3S2diNWxKczBBTkdJVSIsImV4cCI6MjUzNDAyMzAwNzk5fQ.KsdmIUJAH1DwqSKAdd445UAlNxXkvi1UDtJTmcJIZn0"
-
-export CERTIFICATE_PATH=/etc/ssl/certs
-
-#VOLVO_VPN="'vpn-slice --verbose 153.112.0.0/16 131.97.0.0/16 10.223.0.0/16 vas-gitlab.ess.volvo.net tidinfo.got.volvo.net esw-artifactory.got.volvo.net confluence.srv.volvo.com configurator.got.volvo.net jira.srv.volvo.com federate.volvo.com eswjenkinsmasterva.got.volvo.net vashare1.ess.volvo.net esw-artifactory-qa.got.volvo.net vas-gitlab.ess.volvo.net origo.volvo.net segotl2322.got.volvo.net vcn.ds.volvo.net origo.volvo.net streamlit-dev.ess.volvo.net jupyter.ess.volvo.net foaros.volvo.com q1-c005.ess.volvo.net q1-i001.ess.volvo.net'"
-#alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=SMS-OTP -s $VOLVO_VPN --no-dtls scs-emea.volvo.com"
-alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=SMS-OTP -s /mnt/home/a392673/.config/vpn/volvo-vpn-hosts --no-dtls scs-emea.volvo.com"
-
-# lynx
-alias '?'=duck
-alias '??'=google
-alias '???'=bing
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
